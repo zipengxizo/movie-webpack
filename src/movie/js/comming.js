@@ -1,12 +1,11 @@
-import $ from 'jquery';
-// var $ = require('jqeury');
-// import axios from 'axios'
+// import $ from 'jquery';
+var $ = require('jquery');
 
 export var movieObject = (function() {
     var _bind = function(obj) {
-        console.log(1111, obj)
         obj.container.on('click', '.pic_show', function() {
-            console.log('goto detail page');
+            let movieId = $(this).data('movieid');
+            window.location.href = `../detail/detail.html?movieId=${movieId}`;
         })
     }
     var MovieRender = function() {};
@@ -24,10 +23,9 @@ export var movieObject = (function() {
             .done(function(res) {
                 if (res.status === 0) {
                     let { movieList } = res.data;
-                    console.log(res)
                     movieList.forEach(item => {
                         itemMovie += `<li>
-                            <div class="pic_show" data-movieId="${item.id}">
+                            <div class="pic_show" data-movieid="${item.id}">
                                 <img src="${item.img.replace(/w\.h/, "128.180")}">
                             </div>
                             <div class="info_list">

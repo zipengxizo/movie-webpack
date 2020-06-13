@@ -40,7 +40,13 @@ module.exports = merge(common, {
         host: '172.20.10.8', // 设置默认监听域名，如果省略，默认为“localhost”
         port: 3333, // 设置默认监听端口，如果省略，默认为“8080”
         openPage: 'movie/movie.html',
-        index: 'movie/movie.html'
+        index: 'movie/movie.html',
+        proxy: {
+            "/api": {
+                target: "http://39.97.33.178",
+                secure: false
+            }
+        }
     },
     plugins: [
         // 热更新相
