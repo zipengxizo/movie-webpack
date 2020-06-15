@@ -7,12 +7,19 @@
     <title>
         <%= htmlWebpackPlugin.options.title%>
     </title>
+    <style>
+        .infinite-scroll-signal {
+            width: 0;
+            height: 0;
+            visibility: hidden;
+        }
+    </style>
 </head>
 
 <body>
     <div id="main">
         <header id="header">
-            <h1>喵喵电影</h1>
+            <h1>电影</h1>
         </header>
         <div id="content">
             <div class="movie_menu">
@@ -26,6 +33,11 @@
                 <div class="search_entry">
                     <i class="iconfont icon-sousuo"></i>
                 </div>
+            </div>
+            <div class="movie_body">
+                <ul>
+                </ul>
+                <div class="infinite-scroll-signal"></div>
             </div>
             <!-- 下面动态添加电影列表 -->
         </div>
@@ -46,6 +58,7 @@
             </ul>
         </footer>
     </div>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 </body>
 
 </html>

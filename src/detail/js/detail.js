@@ -1,8 +1,8 @@
 import $ from 'jquery';
+import { GetQueryString } from '~/assets/js/util/util.js'
 export const DetailObj = (function() {
 
-    var DetailRender = function() {}
-
+    var DetailRender = function() {};
     DetailRender.prototype.init = function(config) {
         this.container = $(config.id);
         return this;
@@ -51,19 +51,17 @@ export const DetailObj = (function() {
                     </div>
                 </div>`
                 self.container.append(template);
+                new Swiper('.detail_player', {
+                    slidesPerView: 'auto',
+                    freeMode: true,
+                    freeModeSticky: true
+                });
             }
         });
+
+        return this;
 
     }
     return DetailRender;
 
 })()
-
-function GetQueryString(name) {
-    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-    var r = window.location.search.substr(1).match(reg);
-    if (r != null) {
-        return unescape(r[2]);
-    }
-    return null;
-};

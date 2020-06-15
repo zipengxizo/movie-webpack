@@ -54,6 +54,9 @@ var webpackconfig = merge(common, {
         filename: 'assets/js/[name].[chunkhash].js',
         publicPath: '../'
     },
+    externals: {
+        jquery: 'jQuery',
+    },
     plugins: [
         // new CleanWebpackPlugin(),
         /* new HtmlWebpackPlugin({
@@ -108,9 +111,9 @@ var webpackconfig = merge(common, {
                 from: path.resolve(__dirname, '../assets/images'),
                 to: path.resolve(__dirname, '../dist/assets/images/'),
             }]
-        })
+        }),
 
-        // new BundleAnalyzerPlugin(),
+        new BundleAnalyzerPlugin(),
     ],
     optimization: {
         splitChunks: {
