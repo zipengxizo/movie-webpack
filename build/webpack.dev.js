@@ -20,8 +20,9 @@ function getEntry() {
 
 getEntry().forEach(pathname => {
     let conf = {
+        title: 'development ' + pathname,
         filename: path.join(pathname, pathname) + '.html',
-        template: path.join(__dirname, '..', 'src', pathname, 'html', 'index.html'),
+        template: 'html-withimg-loader!' + path.join(__dirname, '..', 'src', pathname, 'html', 'index.html'),
         chunks: [pathname]
     }
     common.plugins.push(new HtmlWebpackPlugin(conf))
