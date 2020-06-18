@@ -45,6 +45,7 @@ module.exports = merge(common, {
         proxy: {
             "/api": {
                 target: "http://39.97.33.178",
+                // target:"172.20.10.8:3002",
                 secure: false
             }
         }

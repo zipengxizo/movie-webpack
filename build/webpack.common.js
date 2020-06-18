@@ -59,7 +59,7 @@ var webpackconfig = {
                 ]
             },
             {
-                test: /\.(png|svg|jpg|gif)$/,
+                test: /\.(png|svg|jpg|gif|glb|gltf)$/,
                 loader: 'file-loader',
                 options: {
                     name(file) {
@@ -83,7 +83,7 @@ var webpackconfig = {
                         return '[hash][name].[ext]'
                     },
                     limit: 10240,
-                    publicPath: 'assets/css/font/',
+                    publicPath: '../',
                     outputPath: 'assets/css/font/',
                     useRelativePath: devMode === "production"
                 }

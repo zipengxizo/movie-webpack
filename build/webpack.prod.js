@@ -66,9 +66,9 @@ var webpackconfig = merge(common, {
             'process.env': 'production',
         }),
         new webpack.HashedModuleIdsPlugin(),
-        new UglifyJSPlugin({
+        /* new UglifyJSPlugin({
             sourceMap: true
-        }),
+        }), */
 
         // 复制内容到指定目录，一般针对一些静态资源
         new CopyWebpackPlugin({
