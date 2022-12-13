@@ -20,7 +20,7 @@
         "cross-env": "^7.0.2",
         "css-loader": "^3.5.3",
         "csv-loader": "^3.0.3",
-        "express": "^4.17.1",
+        "express": "^4.17.3",
         "file-loader": "^6.0.0",
         "glob": "^7.1.6",
         "html-webpack-inline-source-plugin": "0.0.10",
